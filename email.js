@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+require("dotenv").config()
 
 
 const sendMail = (to) => {
@@ -6,8 +7,8 @@ const sendMail = (to) => {
   var transporter = nodemailer.createTransport({
     service: 'yahoo',
     auth: {
-      user: 'n.donevski@yahoo.com',
-      pass: 'nfmc gaco vwhr dnuv'
+      user: process.env.AUTH_USER,
+      pass: process.env.AUTH_PASSWORD
     }
   });
 
